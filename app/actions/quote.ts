@@ -1,8 +1,6 @@
-"use server"
+"use client"
 
-import { Resend } from "resend"
-
-const resend = new Resend(process.env.RESEND_API_KEY)
+import { sendQuoteEmail } from "@/lib/email"
 
 interface FormData {
   services: string[]
@@ -19,34 +17,24 @@ interface FormData {
 
 export async function submitQuote(formData: FormData) {
   try {
-    const emailContent = `
-      New Quote Request from ${formData.name}
-      
-      Contact Information:
-      - Name: ${formData.name}
-      - Email: ${formData.email}
-      - Phone: ${formData.phone}
-      - Address: ${formData.address}
-      
-      Project Details:
-      - Services: ${formData.services.join(", ")}
-      - Property Type: ${formData.propertyType}
-      - Project Size: ${formData.projectSize}
-      - Timeline: ${formData.timeline}
-      - Budget: ${formData.budget}
-      
-      Additional Details:
-      ${formData.details}
-    `
-
-    await resend.emails.send({
-      from: "quotes@greenwestlandscaping.com",
-      to: "info@greenwestlandscaping.com",
-      subject: `New Quote Request from ${formData.name}`,
-      text: emailContent,
+    const result = await sendQuoteEmail({
+      services: formData.services,
+      propertyType: formData.propertyType,
+      projectSize: formData.projectSize,
+      timeline: formData.timeline,
+      budget: formData.budget,
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      address: formData.address,
+      details: formData.details,
     })
 
-    return { success: true, message: "Quote request submitted successfully!" }
+    if (result.success) {
+      return { success: true, message: "Quote request submitted successfully!" }
+    } else {
+      return { success: false, message: result.error || "Failed to submit quote request. Please try again." }
+    }
   } catch (error) {
     console.error("Error submitting quote:", error)
     return { success: false, message: "Failed to submit quote request. Please try again." }

@@ -30,7 +30,6 @@ const services = [
   "Concreting",
   "Landscaping",
   "Artificial Grass",
-  "Decking",
   "Driveway Construction",
   "Exposed Concrete",
   "Garden Maintenance",
@@ -38,9 +37,6 @@ const services = [
   "Landscaping Design",
   "Letterbox Installation",
   "Mulching",
-  "Outdoor Lighting",
-  "Pergolas & Gazebos",
-  "Pool Surrounds",
 ]
 
 export default function QuotePage() {

@@ -113,7 +113,7 @@ export function EnhancedHeroSection() {
                   asChild
                 >
                   <Link href="/quote" className="flex items-center justify-center">
-                    Start Your Quote Quiz
+                    Get Free Quote
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </Link>
                 </Button>

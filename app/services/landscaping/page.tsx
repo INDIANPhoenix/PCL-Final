@@ -19,7 +19,6 @@ export default function LandscapingPage() {
   const features = [
     "Complete landscape design and installation",
     "Garden bed creation and planting",
-    "Retaining walls and terracing",
     "Irrigation system installation",
     "Hardscape and softscape integration",
     "Ongoing maintenance programs",

@@ -18,28 +18,10 @@ const portfolioItems = [
     description: "Complete garden transformation with native plants and water features",
   },
   {
-    title: "Elegant Pool Surround",
-    category: "Pool Surrounds",
-    image: "/projects/sliding-pool-deck.png",
-    description: "Custom pool surround with decorative concrete and lighting",
-  },
-  {
-    title: "Natural Stone Retaining Wall",
-    category: "Retaining Walls",
-    image: "/projects/front-yard-landscaping.avif",
-    description: "Engineered retaining wall with integrated garden beds",
-  },
-  {
     title: "Sustainable Garden Design",
     category: "Garden Design",
     image: "/projects/elegant-courtyard-pool.jpeg",
     description: "Water-wise garden with native plants and efficient irrigation",
-  },
-  {
-    title: "Custom Outdoor Kitchen",
-    category: "Outdoor Living",
-    image: "/projects/pergola-outdoor-kitchen.jpeg",
-    description: "Fully equipped outdoor kitchen with concrete countertops",
   },
 ]
 
